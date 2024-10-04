@@ -1,8 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import * as functions from 'firebase-functions';
-
 
 
   async function createNestServer() {
@@ -11,8 +9,9 @@ import * as functions from 'firebase-functions';
     app.setGlobalPrefix('api');
     // if (process.env.FUNCIONS_EMULATOR || process.env.NODE_ENV !== 'production') {
       // In Dev mode
-      await app.listen(3000);
-      console.log("App running on http://localhost:3000/");
+      const port = process.env.PORT || 3000;
+      await app.listen(port);
+      console.log("App running on http://localhost:?{port}/");
       // TODO: Link angular firebase url
       // app.enableCors({
       //   origin: ['https://your-angular-frontend-url.firebaseapp.com'],  // Update with your actual frontend URL

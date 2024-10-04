@@ -8,7 +8,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     UserModule,
     ConfigModule.forRoot({
-      envFilePath: 'private/.env',
+      envFilePath: 'etc/secrets/.env',
       isGlobal: true,
     }),
   ],

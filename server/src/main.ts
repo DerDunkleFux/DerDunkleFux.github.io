@@ -12,6 +12,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
       const port = process.env.PORT || 3000;
       await app.listen(port);
       console.log("App running on http://localhost:"+port+"/");
+
       // TODO: Link angular firebase url
       // app.enableCors({
       //   origin: ['https://your-angular-frontend-url.firebaseapp.com'],  // Update with your actual frontend URL
